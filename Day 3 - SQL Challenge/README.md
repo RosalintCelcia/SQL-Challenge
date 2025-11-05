@@ -23,8 +23,11 @@ LIMIT 5;
 🔍 𝐐𝐮𝐞𝐫𝐲 𝐁𝐫𝐞𝐚𝐤𝐝𝐨𝐰𝐧
 
 🔹 The query picks four useful fields — week, service, patients_refused, and patients_request — to focus on refusal performance.
+
 🔹 ORDER BY sorts the data by patients_refused in descending order, showing the weeks with the highest refusal counts first.
+
 🔹 LIMIT 5 restricts the output to only the top 5 critical weeks.
+
 🔹 This approach highlights performance issues quickly and helps prioritize improvements.
 
 💡 𝐊𝐞𝐲 𝐋𝐞𝐚𝐫𝐧𝐢𝐧𝐠𝐬
