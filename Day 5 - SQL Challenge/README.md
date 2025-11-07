@@ -94,10 +94,3 @@ This challenge is part of the 21 Days SQL Challenge powered by Indian Data Club 
 
 ### 📅 Day 5 Completed!
 Next up: Day 6 — stay tuned for more SQL adventures!
-
-
-🧑‍💻 GitHub - RosalintCelcia
-
-🌐 Indian Data Club
-
-🚀 DPDzero
