@@ -24,11 +24,10 @@ Aggregate functions perform calculations across multiple rows and return a singl
 ## 🧩 Example Queries
 
 ### 🧾 Single Aggregate
-```sql
 SELECT COUNT(*) AS total_patients
 FROM patients;
 
-📊 Multiple Aggregates
+### 📊 Multiple Aggregates
 SELECT
     COUNT(*) AS total,
     AVG(age) AS avg_age,
@@ -37,12 +36,12 @@ SELECT
     SUM(satisfaction) AS total_satisfaction
 FROM patients;
 
-🩺 With WHERE Clause
+### 🩺 With WHERE Clause
 SELECT AVG(satisfaction)
 FROM patients
 WHERE service = 'Cardiology';
 
-💡 Tips & Tricks
+### 💡 Tips & Tricks
 
 ✅ COUNT(*) vs COUNT(column):
 
@@ -62,13 +61,13 @@ FROM patients;
 SELECT COUNT(DISTINCT service) AS unique_services
 FROM patients;
 
-🎯 Day 5 Challenge
-Question:
+### 🎯 Day 5 Challenge
+### Question:
 
 Calculate the total number of patients admitted, total patients refused, and the average patient satisfaction across all services and weeks.
 Round the average satisfaction to 2 decimal places.
 
-Answer:
+### Answer:
 SELECT 
     SUM(patients_admitted) AS Admitted_Patients,
     SUM(patients_refused) AS Refused_Patients,
@@ -76,10 +75,10 @@ SELECT
 FROM services_weekly;
 
 
-📊 Result:
+### 📊 Result:
 This query provides a summarized view of hospital metrics — total admissions, refusals, and overall satisfaction.
 
-🧠 Key Learning Outcomes
+### 🧠 Key Learning Outcomes
 
 Mastered use of core SQL aggregate functions.
 
@@ -89,16 +88,13 @@ Practiced rounding and filtering with conditional clauses.
 
 Explored ways to handle NULL values and unique counts.
 
-🚀 Challenge Series
+### 🚀 Challenge Series
 
 This challenge is part of the 21 Days SQL Challenge powered by Indian Data Club & DPDzero — designed to help data enthusiasts strengthen their SQL fundamentals through hands-on problem-solving.
 
-📅 Day 5 Completed!
+### 📅 Day 5 Completed!
 Next up: Day 6 — stay tuned for more SQL adventures!
 
-📌 Connect & Learn
-
-💼 LinkedIn - Rosalint Celcia
 
 🧑‍💻 GitHub - RosalintCelcia
 
