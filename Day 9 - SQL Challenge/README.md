@@ -29,7 +29,7 @@ strftime('%m', date)            -- Extract month
 strftime('%d', date)            -- Extract day
 
 ## 🧠 Examples
-### 1️⃣ Calculate length of stay in days
+1️⃣ Calculate length of stay in days
 SELECT
     patient_id,
     name,
@@ -38,18 +38,18 @@ SELECT
     CAST(JULIANDAY(departure_date) - JULIANDAY(arrival_date) AS INTEGER) AS stay_days
 FROM patients;
 
-### 2️⃣ Extract year and month from date
+2️⃣ Extract year and month from date
 SELECT
     patient_id,
     strftime('%Y', arrival_date) AS arrival_year,
     strftime('%m', arrival_date) AS arrival_month
 FROM patients;
 
-### 3️⃣ Filter by date range
+3️⃣ Filter by date range
 SELECT * FROM patients
 WHERE arrival_date BETWEEN '2024-01-01' AND '2024-12-31';
 
-### 4️⃣ Find patients admitted in a specific month (e.g., June)
+4️⃣ Find patients admitted in a specific month (e.g., June)
 SELECT * FROM patients
 WHERE strftime('%m', arrival_date) = '06';  -- June
 
@@ -69,7 +69,7 @@ DATEDIFF(date2, date1)
 date2 - date1
 
 
-### ✅ Extract date parts easily (SQLite):
+✅ Extract date parts easily (SQLite):
 
 strftime('%Y', date)  -- Year (2024)
 strftime('%m', date)  -- Month (01–12)
@@ -77,9 +77,9 @@ strftime('%d', date)  -- Day (01–31)
 strftime('%W', date)  -- Week number
 
 
-### ✅ Performance tip: Using date functions in WHERE may slow queries on large datasets
+✅ Performance tip: Using date functions in WHERE may slow queries on large datasets
 
-### ✅ Cast results to appropriate types (INTEGER, REAL) for accurate math and formatting
+✅ Cast results to appropriate types (INTEGER, REAL) for accurate math and formatting
 
 ## 🏋️‍♀️ Daily Challenge
 ## 🎯 Question:
@@ -88,7 +88,7 @@ Calculate the average length of stay (in days) for each service,
 showing only services where the average stay is more than 7 days.
 Also show the count of patients, and order results by average stay descending.
 
-### ✅ Query:
+✅ Query:
 SELECT
     service,
     COUNT(patient_id) AS patient_count,
@@ -107,8 +107,11 @@ helping identify areas for further analysis or resource optimization.
 ## 🧾 Key Learning Outcomes
 
 ▪️Learned how to calculate date differences in SQL
+
 ▪️Understood date extraction and filtering using strftime()
+
 ▪️Practiced GROUP BY + HAVING with date-based metrics
+
 ▪️Gained insight into real-world healthcare analytics scenarios
 
 ## 🚀 Challenge Series
