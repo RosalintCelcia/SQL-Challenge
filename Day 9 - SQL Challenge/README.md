@@ -89,6 +89,7 @@ showing only services where the average stay is more than 7 days.
 Also show the count of patients, and order results by average stay descending.
 
 ✅ Query:
+```sql
 SELECT
     service,
     COUNT(patient_id) AS patient_count,
@@ -98,7 +99,7 @@ WHERE departure_date IS NOT NULL AND arrival_date IS NOT NULL
 GROUP BY service
 HAVING AVG(JULIANDAY(departure_date) - JULIANDAY(arrival_date)) > 7
 ORDER BY avg_stay_days DESC;
-
+```sql
 ## 📊 Result:
 
 This query highlights the services where patients tend to stay longer,
