@@ -20,16 +20,18 @@ They are essential for time-based reporting, calculating durations, and trend an
 ---
 
 ## 🧩 Common Date Functions (SQLite Examples)
-
+```sql
 DATE('now')                     -- Current date
 JULIANDAY(date)                 -- Convert to Julian day number
 DATE(date, '+1 day')            -- Add 1 day
 strftime('%Y', date)            -- Extract year
 strftime('%m', date)            -- Extract month
 strftime('%d', date)            -- Extract day
+```
 
 ## 🧠 Examples
 1️⃣ Calculate length of stay in days
+```sql
 SELECT
     patient_id,
     name,
@@ -37,21 +39,28 @@ SELECT
     departure_date,
     CAST(JULIANDAY(departure_date) - JULIANDAY(arrival_date) AS INTEGER) AS stay_days
 FROM patients;
+```
 
 2️⃣ Extract year and month from date
+```sql
 SELECT
     patient_id,
     strftime('%Y', arrival_date) AS arrival_year,
     strftime('%m', arrival_date) AS arrival_month
 FROM patients;
+```
 
 3️⃣ Filter by date range
+```sql
 SELECT * FROM patients
 WHERE arrival_date BETWEEN '2024-01-01' AND '2024-12-31';
+```
 
 4️⃣ Find patients admitted in a specific month (e.g., June)
+```sql
 SELECT * FROM patients
 WHERE strftime('%m', arrival_date) = '06';  -- June
+```
 
 ## 💡 Tips & Tricks
 
@@ -70,12 +79,12 @@ date2 - date1
 
 
 ✅ Extract date parts easily (SQLite):
-
+```sql
 strftime('%Y', date)  -- Year (2024)
 strftime('%m', date)  -- Month (01–12)
 strftime('%d', date)  -- Day (01–31)
 strftime('%W', date)  -- Week number
-
+```
 
 ✅ Performance tip: Using date functions in WHERE may slow queries on large datasets
 
@@ -99,7 +108,7 @@ WHERE departure_date IS NOT NULL AND arrival_date IS NOT NULL
 GROUP BY service
 HAVING AVG(JULIANDAY(departure_date) - JULIANDAY(arrival_date)) > 7
 ORDER BY avg_stay_days DESC;
-```sql
+```
 ## 📊 Result:
 
 This query highlights the services where patients tend to stay longer,
