@@ -26,14 +26,6 @@ SQL statements end with ;
 
 Use aliases (AS) for clarity
 
-📚 Resources:
-
-SQL Tutorial for Beginners | MySQL Tutorial
-
-SQL Basics Explained (YouTube)
-
-Learn SQL SELECT Statement
-
 🪄 Reflection:
 
 “Every dataset has a story — and SQL helps you uncover it.”
