@@ -1,8 +1,8 @@
-🏥 Day 1 — Introduction to SQL & The SELECT Statement
+### 🏥 Day 1 — Introduction to SQL & The SELECT Statement
 
 Goal: Understand how SQL retrieves data using the SELECT statement.
 
-📘 Topics Covered:
+### 📘 Topics Covered:
 
 Basic SELECT syntax
 
@@ -14,7 +14,7 @@ Using DISTINCT, LIMIT, and column aliases
 
 Writing readable and well-commented SQL code
 
-💡 Key Learnings:
+### 💡 Key Learnings:
 
 SELECT chooses columns
 
@@ -26,7 +26,7 @@ SQL statements end with ;
 
 Use aliases (AS) for clarity
 
-🪄 Reflection:
+### 🪄 Reflection:
 
 “Every dataset has a story — and SQL helps you uncover it.”
 Day 1 taught me that understanding SELECT is like learning to read the language of data itself.
