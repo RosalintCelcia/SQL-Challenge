@@ -14,6 +14,8 @@ Using DISTINCT, LIMIT, and column aliases
 
 Writing readable and well-commented SQL code
 
+---
+
 ### 💡 Key Learnings:
 
 SELECT chooses columns
@@ -25,6 +27,8 @@ DISTINCT removes duplicates
 SQL statements end with ;
 
 Use aliases (AS) for clarity
+
+---
 
 ### 🪄 Reflection:
 
