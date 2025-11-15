@@ -79,14 +79,18 @@ and average staff morale. Order by average patient satisfaction descending.
 ```sql
 SELECT
     CASE 
-        WHEN event IS NULL OR event = '' THEN 'No Event'
-        ELSE 'With Event'
+        WHEN event IS NOT NULL AND event <> 'none' THEN 'With Event'
+        ELSE 'No Event'
     END AS event_status,
-    COUNT(*) AS week_count,
+    COUNT(week) AS week_count,
     ROUND(AVG(patient_satisfaction), 2) AS avg_satisfaction,
     ROUND(AVG(staff_morale), 2) AS avg_morale
 FROM services_weekly
-GROUP BY event_status
+GROUP BY 
+    CASE 
+        WHEN event IS NOT NULL AND event <> 'none' THEN 'With Event'
+        ELSE 'No Event'
+    END
 ORDER BY avg_satisfaction DESC;
 ```
 
