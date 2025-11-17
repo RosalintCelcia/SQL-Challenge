@@ -2,7 +2,7 @@
 
 with Indian Data Club & DPDzero
 
-🧠 Topics Covered:
+### 🧠 Topics Covered:
 INNER JOIN — Combining Related Data from Multiple Tables
 
 INNER JOIN returns only the matching rows from two tables based on a related column.
