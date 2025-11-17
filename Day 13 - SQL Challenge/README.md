@@ -1,4 +1,4 @@
-📅 Day 13 (17/11): INNER JOIN — SQL Daily Challenge
+# 📅 Day 13 (17/11): INNER JOIN — SQL Daily Challenge
 
 with Indian Data Club & DPDzero
 
