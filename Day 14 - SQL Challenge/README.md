@@ -1,4 +1,4 @@
-# 📘 Day 14 (18/11): LEFT JOIN & RIGHT JOIN
+# 📘 Day 14 : LEFT JOIN & RIGHT JOIN
 
 ## SQL Daily Challenge – Indian Data Club x DPDzero
 
