@@ -6,17 +6,17 @@ Today’s focus was on LEFT JOIN and RIGHT JOIN, essential for combining tables 
 
 ### 🔍 Topics Covered
 
-LEFT JOIN
+▪️LEFT JOIN
 
-RIGHT JOIN
+▪️RIGHT JOIN
 
-Handling unmatched / missing records
+▪️Handling unmatched / missing records
 
-NULL handling with COALESCE
+N▪️ULL handling with COALESCE
 
-Finding non-matching rows
+▪️Finding non-matching rows
 
-Difference between JOIN types
+▪️Difference between JOIN types
 
 ### 🧠 Concept Summary
 ## LEFT JOIN
@@ -43,8 +43,9 @@ RIGHT JOIN table2 ON table1.column = table2.column;
 ## INNER vs LEFT vs RIGHT
 JOIN        -> Type	Returns
 INNER JOIN	-> Only matching rows
-LEFT JOIN	  -> All left table rows + matching right table rows
+LEFT JOIN   -> All left table rows + matching right table rows
 RIGHT JOIN  -> 	All right table rows + matching left table rows
+
 ### 📝 Examples
 1️⃣ Staff with their schedule (even if no schedule exists)
 ```sql
@@ -107,24 +108,23 @@ WHERE → filters after join (may remove left rows)
 ### 🏆 Daily Challenge
 #### Question:
 
-Create a comprehensive report showing patient_id, patient name, age, service, and the total number of staff members available for their service.
-Only include patients in services that have more than 5 staff members.
-Order by staff count DESC, then patient name.
+Create a staff utilisation report showing all staff members (staff_id, staff_name, role, service) and the count of weeks they were present (from staff_schedule). Include staff members even if they have no schedule records. Order by weeks present descending..
 
 #### ✔️ Solution Query
 ```sql
 SELECT
-    p.patient_id,
-    p.name AS patient_name,
-    p.age,
-    p.service,
-    COUNT(s.staff_id) AS staff_count
-FROM patients p
-LEFT JOIN staff s ON p.service = s.service
-GROUP BY p.patient_id, p.name, p.age, p.service
-HAVING COUNT(s.staff_id) > 5
-ORDER BY staff_count DESC, patient_name ASC;
+    s.staff_id,
+    s.staff_name,
+    s.role,
+    s.service,
+    COALESCE(SUM(ss.present), 0) AS weeks_present
+FROM staff s
+LEFT JOIN staff_schedule ss 
+    ON s.staff_id = ss.staff_id
+GROUP BY s.staff_id, s.staff_name, s.role, s.service
+ORDER BY weeks_present DESC, s.staff_name;
 ```
+
 ### 📅 Day 14 Completed!
 
 Moving forward step-by-step, mastering joins and relational data deeper each day.
