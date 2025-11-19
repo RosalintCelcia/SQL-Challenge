@@ -86,27 +86,21 @@ Order by patients admitted descending.
 
 ### ✅ Answer Query
 ```sql
-SELECT
-    sw.service,
-    sw.patients_admitted AS total_admitted,
-    sw.patients_refused AS total_refused,
-    sw.avg_patient_satisfaction,
-    COUNT(DISTINCT s.staff_id) AS total_staff_assigned,
-    SUM(CASE WHEN ss.present = 1 THEN 1 ELSE 0 END) AS staff_present_week20
-FROM services_weekly sw
-LEFT JOIN staff s 
-    ON sw.service = s.service
-LEFT JOIN staff_schedule ss
-    ON s.staff_id = ss.staff_id
-    AND sw.week = ss.week
-WHERE sw.week = 20
-GROUP BY 
+SELECT 
     sw.service,
     sw.patients_admitted,
     sw.patients_refused,
-    sw.avg_patient_satisfaction
-ORDER BY 
-    sw.patients_admitted DESC;
+    ROUND(AVG(sw.patient_satisfaction), 2) AS avg_satisfaction,
+    COUNT(DISTINCT s.staff_id) AS total_staff_assigned,
+    SUM(CASE WHEN ss.present = 1 THEN 1 ELSE 0 END) AS staff_present_count
+FROM services_weekly sw
+LEFT JOIN staff s ON sw.service = s.service
+LEFT JOIN staff_schedule ss 
+    ON s.staff_id = ss.staff_id 
+    AND sw.week = ss.week
+WHERE sw.week = 20
+GROUP BY sw.service, sw.patients_admitted, sw.patients_refused
+ORDER BY sw.patients_admitted DESC;
 ```
 
 ### 📅 Day 15 Completed!
