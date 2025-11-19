@@ -105,8 +105,9 @@ GROUP BY
     sw.patients_admitted,
     sw.patients_refused,
     sw.avg_patient_satisfaction
-```
-
-
 ORDER BY 
     sw.patients_admitted DESC;
+```
+
+### 📅 Day 15 Completed!
+Moving forward step-by-step, mastering joins and relational data deeper each day.
