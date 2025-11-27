@@ -1,9 +1,11 @@
-📅 Day 21 (27/11): Common Table Expressions (CTEs)
+### 📅 Day 21 (27/11): Common Table Expressions (CTEs)
 
 Today’s focus: WITH clause, CTEs, recursive CTEs (if applicable), and query organization.
 CTEs help break down complex queries into readable, manageable steps — perfect for analytics and real-world SQL problem-solving.
 
-📘 What Are CTEs?
+---
+
+### 📘 What Are CTEs?
 
 CTEs (Common Table Expressions) create temporary named result sets that exist only during query execution.
 
@@ -17,7 +19,9 @@ Easier to maintain
 
 Step-by-step like Python functions ⬆️
 
-🧱 Basic Syntax
+---
+
+### 🧱 Basic Syntax
 ```sql
 WITH cte_name AS (
     SELECT columns
@@ -39,7 +43,9 @@ FROM cte1
 JOIN cte2 ON ...;
 ```
 
-💡 Examples
+---
+
+### 💡 Examples
 📊 Simple CTE for Service Statistics
 ```sql
 WITH service_stats AS (
@@ -55,8 +61,9 @@ FROM service_stats
 WHERE avg_satisfaction > 75
 ORDER BY patient_count DESC;
 ```
+--- 
 
-🛠️ Tips & Tricks
+### 🛠️ Tips & Tricks
 ✅ Break Down Complex Queries with Step-by-Step CTEs
 ```sql
 WITH step1 AS (SELECT ...),
@@ -104,6 +111,8 @@ JOIN service_avg sa
 WHERE p.satisfaction > sa.avg_sat;
 ```
 
+---
+
 📝 Use Descriptive CTE Names
 -- ❌ WITH x AS (...), y AS (...), z AS (...)
 -- ✅ WITH patient_stats AS (...),
@@ -125,10 +134,14 @@ cte2 AS (...)
 SELECT * FROM cte2;
 ```
 
+---
+
 ### ⚠️ Note
 
 CTEs are not materialized by default in many SQL engines.
 If reused many times for expensive calculations → consider temporary tables.
+
+---
 
 ### 🏆 Daily Challenge
 
@@ -136,7 +149,7 @@ If reused many times for expensive calculations → consider temporary tables.
 Staff metrics per service (total staff, avg weeks present), 3) Patient demographics per service (avg age, count). Then combine all three CTEs to create a final report showing service name, 
 all calculated metrics, and an overall performance score (weighted average of admission rate and satisfaction). Order by performance score descending.
 
-Question Breakdown: 
+### Question Breakdown: 
 
 Create a comprehensive hospital performance dashboard using CTEs.
 
