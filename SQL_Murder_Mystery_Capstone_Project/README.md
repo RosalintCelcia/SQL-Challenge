@@ -59,7 +59,7 @@ WHERE k.room = 'CEO Office'
   AND k.entry_time BETWEEN '2025-10-15 20:45' AND '2025-10-15 21:10';
 ```
 
-### ** 📞 2. Suspicious Calls Before the Murder**
+### **📞 2. Suspicious Calls Before the Murder**
 ```sql
 SELECT e.name, c.call_time, c.duration_sec
 FROM calls c
