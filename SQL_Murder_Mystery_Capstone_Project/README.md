@@ -114,6 +114,4 @@ SELECT name FROM callers;
 Using all intersecting clues, SQL successfully identified:
 
 ### **🎯 The killer : David Kumar**
-📍 The location
-🕒 The timeline
-🔍 The motive trail hidden inside the logs
+
